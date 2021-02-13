@@ -2,13 +2,7 @@
 
 
 // Prompts for user input
-window.alert("Welcome to my Password Generator");
-var randoInput = window.prompt("How many characters would you like your password to be?");
-var userInput = parseInt(randoInput);
-var symbVerify = confirm("Would you like to include random symbols? OK for 'Yes' or CANCEL for 'NO'");
-var charUpVerify = confirm("Would you like to include random UPPER case letters? OK for 'Yes' or CANCEL for 'NO'");
-var numVerify = confirm("Would you like to include random Numbers? OK for 'Yes' or CANCEL for 'NO'");
-var charLwrVerify = confirm("Would you like to include random LOWER case letters? OK for 'Yes' or CANCEL for 'NO'");
+
 
 // Defined Arrays
 var passCharUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",]
@@ -17,13 +11,27 @@ var passNum = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var passSym = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 
 
-
-const generatePassword = (length = userInput) => {
+//debugger;
+const generatePassword = () => {
   // Declare all characters options
+  window.alert("Welcome to my Password Generator");
+  var randoInput = window.prompt("How many characters would you like your password to be?");
+  var length = parseInt(randoInput);
+
+  if (isNaN(length) || length === "" || length === null) {
+    alert("Please enter a number!");
+  }
+  else {
+
+    var symbVerify = confirm("Would you like to include random symbols? OK for 'Yes' or CANCEL for 'NO'");
+    var charUpVerify = confirm("Would you like to include random UPPER case letters? OK for 'Yes' or CANCEL for 'NO'");
+    var numVerify = confirm("Would you like to include random Numbers? OK for 'Yes' or CANCEL for 'NO'");
+    var charLwrVerify = confirm("Would you like to include random LOWER case letters? OK for 'Yes' or CANCEL for 'NO'");
+  }
   let chars = '';
 
   console.log(charUpVerify);
-
+  // debugger;
   if (charUpVerify) {
     chars = passCharUpper.join('');
   }
