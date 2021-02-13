@@ -4,7 +4,7 @@
 // Prompts for user input
 window.alert("Welcome to my Password Generator");
 var randoInput = window.prompt("How many characters would you like your password to be?");
-var b = parseInt(randoInput);
+var userInput = parseInt(randoInput);
 var symbVerify = confirm("Would you like to include random symbols? OK for 'Yes' or CANCEL for 'NO'");
 var charUpVerify = confirm("Would you like to include random UPPER case letters? OK for 'Yes' or CANCEL for 'NO'");
 var numVerify = confirm("Would you like to include random Numbers? OK for 'Yes' or CANCEL for 'NO'");
@@ -18,8 +18,8 @@ var passSym = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", "-", ".", "/", 
 
 
 
-const generatePassword = (length = b) => {
-  // Declare all characters
+const generatePassword = (length = userInput) => {
+  // Declare all characters options
   let chars = '';
 
   console.log(charUpVerify);
@@ -36,7 +36,6 @@ const generatePassword = (length = b) => {
   if (symbVerify) {
     chars = chars.concat(passSym.join(''));
   }
-  console.log(chars);
   // Pick characers randomly
   let str = '';
   for (let i = 0; i < length; i++) {
