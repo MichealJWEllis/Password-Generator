@@ -54,6 +54,8 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
+  // if (passwordText.value === "" || passwordText.value === null)
+  //   alert("Please select at least one condition!");
 };
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
