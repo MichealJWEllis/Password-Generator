@@ -44,4 +44,4 @@
 
 Made with ❤️ by [Micheal Jw Ellis]
 
-### ©️2021 PasswordGenerator, Inc 
+
